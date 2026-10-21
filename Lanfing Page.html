@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinamento: O Natal Lucrativo | Luana Duarte</title>
+    
+    <!-- Google Fonts: Roboto, Playfair Display, Plus Jakarta Sans e Cinzel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Swiper CSS para os Carrosséis -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        jakarta: ['Plus Jakarta Sans', 'sans-serif'],
+                        cinzel: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        gold: '#FFD15B', 
+                        lightGold: '#FFE898', 
+                        accentRed: '#EE131F',
+                        maroon: {
+                            700: '#8A081D',
+                            800: '#6B0516',
+                            900: '#4A0410',
+                            950: '#2A0108',
+                        },
+                        forest: {
+                            800: '#0B5736',
+                            900: '#06301E',
+                            950: '#03170E',
+                        },
+                        wine: {
+                            800: '#5c0a18',
+                            900: '#3d050f',
+                            950: '#260209',
+                        },
+                        pine: {
+                            700: '#0c3d25',
+                            800: '#072b1a',
+                            900: '#041d11',
+                        },
+                        champagne: {
+                            100: '#fcf6e8',
+                            200: '#f7e8c3',
+                            300: '#f1d696',
+                            400: '#e4be68',
+                            500: '#d4af37',
+                            600: '#b89025',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #2A0108; 
+            color: #fff;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .text-gold {
+            color: #FFC258;
+        }
+
+        .btn-gold {
+            background-color: #FFC258;
+            color: #000;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 194, 88, 0.3);
+        }
+        
+        .btn-gold:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 194, 88, 0.5);
+            background-color: #ffd27f;
+        }
+
+        .swiper-pagination-bullet {
+            background: #fff;
+            opacity: 0.5;
+        }
+        .swiper-pagination-bullet-active {
+            background: #FFC258;
+            opacity: 1;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: #FFC258 !important;
+        }
+
+        .bento-card {
+            background: rgba(20, 3, 3, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 194, 88, 0.1);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .bento-card:hover {
+            border-color: rgba(229, 182, 76, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .bokeh-dot {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            filter: blur(12px);
+            mix-blend-mode: screen;
+            animation: bokehGlow 7s ease-in-out infinite alternate;
+        }
+
+        @keyframes bokehGlow {
+            0% { opacity: 0.18; transform: translateY(0) scale(0.95); }
+            50% { opacity: 0.42; transform: translateY(-8px) scale(1.08); }
+            100% { opacity: 0.22; transform: translateY(4px) scale(1); }
+        }
+
+        .star-sparkle {
+            animation: twinkle 3.8s ease-in-out infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.35; transform: scale(0.85) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1.18) rotate(15deg); filter: drop-shadow(0 0 8px rgba(246, 223, 154, 0.9)); }
+        }
+
+        .road-contour {
+            stroke: #160407;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .road-pavement {
+            stroke: url(#pineVelvetGradient);
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .road-gold-edge {
+            stroke: url(#goldFoilGradient);
+            stroke-opacity: 0.75;
+            stroke-linecap: round;
+            filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.45));
+        }
+
+        .road-sparkle-dash {
+            stroke: #fce79f;
+            stroke-dasharray: 14 24;
+            stroke-linecap: round;
+            opacity: 0.85;
+            filter: drop-shadow(0 0 5px rgba(254, 240, 138, 0.8));
+            animation: festiveRoadFlow 32s linear infinite;
+        }
+
+        @keyframes festiveRoadFlow {
+            to { stroke-dashoffset: -1000; }
+        }
+
+        .checkpoint-circle {
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            background: radial-gradient(circle at 35% 30%, #a81c2f 0%, #580916 65%, #240207 100%);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.85), inset 0 2px 4px rgba(255, 255, 255, 0.4), inset 0 -4px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .checkpoint.active .checkpoint-circle {
+            transform: scale(1.14);
+            box-shadow: 0 0 35px rgba(246, 223, 154, 0.8), 0 0 16px rgba(220, 38, 38, 0.8), inset 0 2px 5px rgba(255, 255, 255, 0.6);
+            border-color: #fdedad;
+        }
+
+        .checkpoint-badge-center {
+            left: 50%;
+            transform: translateX(-50%) scale(0.3) translateY(8px);
+            opacity: 0;
+            transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .checkpoint.active .checkpoint-badge-center {
+            transform: translateX(-50%) scale(1) translateY(0);
+            opacity: 1;
+        }
+
+        .headline-card {
+            background: linear-gradient(135deg, rgba(38, 3, 9, 0.94) 0%, rgba(18, 1, 4, 0.97) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.75), 0 0 12px rgba(212, 175, 55, 0.15);
+        }
+
+        .checkpoint.active .headline-card {
+            border-color: rgba(246, 223, 154, 0.85);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.85), 0 0 18px rgba(212, 175, 55, 0.4);
+        }
+
+        .checkpoint.grand-finale {
+            z-index: 50 !important;
+        }
+
+        .checkpoint.grand-finale .checkpoint-badge-center {
+            transform: translateX(-50%) scale(2.5) translateY(-22px);
+            box-shadow: 0 0 35px rgba(16, 185, 129, 1), 0 0 20px rgba(253, 230, 138, 0.8);
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .checkpoint.grand-finale .checkpoint-circle {
+            transform: scale(1.25);
+            box-shadow: 0 0 60px rgba(246, 223, 154, 0.8), 0 0 30px rgba(220, 38, 38, 0.9);
+            border-color: #fef08a;
+        }
+
+        #car-group {
+            will-change: transform;
+            filter: drop-shadow(0 0 12px rgba(253, 230, 138, 0.9)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.85));
+        }
+    </style>
+</head>
+<body class="bg-maroon-950 min-h-screen selection:bg-gold selection:text-maroon-950">
+
+    <header class="relative w-full h-[100dvh] min-h-[600px] flex items-center px-6 md:px-12 overflow-hidden bg-gradient-to-br from-maroon-900 via-maroon-800 to-maroon-950">
+        <div class="absolute inset-0 z-0 bg-maroon-950">
+            <div class="absolute inset-y-0 right-0 w-full md:w-[85%] h-full">
+                <img src="https://i.imgur.com/ZwntKig.jpg" alt="Fundo Cenário de Natal" class="w-full h-full object-cover object-[70%_center] opacity-60 md:opacity-100">
+                <div class="absolute inset-0 bg-gradient-to-r from-maroon-950 via-maroon-950/80 via-40% to-transparent to-80%"></div>
+            </div>
+        </div>
+
+        <div class="absolute top-[-10%] left-[-5%] w-64 h-64 bg-gold rounded-full mix-blend-screen filter blur-[100px] opacity-20 pointer-events-none"></div>
+        <div class="absolute bottom-[10%] right-[10%] w-96 h-96 bg-maroon-700 rounded-full mix-blend-screen filter blur-[120px] opacity-40 pointer-events-none"></div>
+        
+        <div class="relative z-20 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center py-8 md:py-0">
+            <div class="w-full md:w-[65%] lg:w-[60%] flex flex-col items-start text-left mt-10 md:mt-0">
+                <div class="mb-6 md:mb-8 w-full">
+                    <img src="https://i.imgur.com/lsbAhnJ.png" alt="Logotipo Luana Duarte" class="h-24 sm:h-28 md:h-36 lg:h-44 w-auto object-contain brightness-0 invert">
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] font-medium leading-[1.1] tracking-tight mb-2 text-white">
+                    Seja bem-vindo <br>
+                    à <span class="text-[#FFD15B] font-serif italic font-bold drop-shadow-[0_0_25px_rgba(255,209,91,0.9)]">Operação Natal</span> <br>
+                    2026
+                </h1>
+
+                <h2 class="text-[#FFE898] drop-shadow-[0_0_15px_rgba(255,231,154,0.8)] text-[0.65rem] sm:text-xs md:text-sm font-bold uppercase tracking-[0.15em] mb-4 md:mb-6 mt-2">
+                    Fature os primeiros 15 mil reais sobrando agenda
+                </h2>
+
+                <p class="text-gray-50 text-xs sm:text-sm md:text-base font-medium max-w-lg mb-6 md:mb-8 leading-relaxed">
+                    Descubra a arquitetura de processo exata que eu utilizo para pagar o investimento do cenário logo nos primeiros ensaios da agenda, sem precisar virar madrugadas editando!
+                </p>
+
+                <a href="#oferta" class="bg-gold text-maroon-950 text-sm md:text-base font-bold py-3 md:py-4 px-8 md:px-12 rounded-full inline-flex items-center justify-center transition-transform hover:scale-105 shadow-[0_0_30px_rgba(255,209,91,0.5)] hover:shadow-[0_0_40px_rgba(255,209,91,0.7)] w-fit">
+                    Quero lucrar mais agora
+                </a>
+                
+                <div class="mt-5 flex items-center gap-3">
+                    <img src="https://i.imgur.com/6NqNMoU.jpg" alt="Foto Experiência" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border border-gold/30 shadow-md">
+                    <div class="text-gray-300 text-xs sm:text-sm font-medium tracking-wide leading-tight">
+                        + de 10 anos de experiência <br>
+                        validando o método
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-0 inset-x-0 h-24 md:h-32 bg-gradient-to-t from-[#050000] to-transparent z-10"></div>
+    </header>
+
+    <section class="relative py-24 md:py-32 px-6 border-y border-white/10 z-10 overflow-hidden bg-[#080808]">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#7a1024]/70 to-transparent"></div>
+            <div class="absolute left-1/2 top-0 h-48 w-px -translate-x-1/2 bg-gradient-to-b from-[#7a1024]/25 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-6xl mx-auto">
+            <div class="max-w-3xl mx-auto text-center mb-14 md:mb-20">
+                <p class="mb-5 text-[0.68rem] md:text-xs font-bold uppercase tracking-[0.28em] text-[#b4233a]">Eu sei exatamente os problemas que você enfrenta</p>
+                <h2 class="text-3xl md:text-5xl font-bold leading-[1.08] tracking-tight text-white">
+                    A sua <span class="font-serif italic text-[#c0475b] underline decoration-[#7a1024] decoration-2 underline-offset-8">triste realidade</span> no fim do ano
+                </h2>
+                <p class="mt-6 text-base md:text-lg leading-relaxed text-gray-400">
+                    O problema não é falta de esforço seu. É trabalhar muito sem um processo que transforme cada etapa da campanha em oportunidade de venda.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
+                <div class="group bg-[#111111] p-7 md:p-8 transition-colors duration-300 hover:bg-[#151515]">
+                    <div class="mb-8 flex items-center justify-between">
+                        <span class="text-xs font-bold tracking-[0.2em] text-gray-600">01</span>
+                        <i class="fa-solid fa-money-bill-trend-up text-lg text-[#a83249]"></i>
+                    </div>
+                    <h3 class="text-lg font-bold leading-snug text-gray-100">Empatar no lucro</h3>
+                    <p class="mt-4 text-sm leading-relaxed text-gray-400">Você investe em média de <strong class="font-semibold text-[#d25a6c]">5 mil ou até mais</strong> em cenário de Natal, precisa <strong class="font-semibold text-[#d25a6c]">lotar agenda</strong> para compensar financeiramente e às vezes <strong class="font-semibold text-[#d25a6c]">nem vale a pena</strong>.</p>
+                </div>
+                <div class="group bg-[#111111] p-7 md:p-8 transition-colors duration-300 hover:bg-[#151515]">
+                    <div class="mb-8 flex items-center justify-between">
+                        <span class="text-xs font-bold tracking-[0.2em] text-gray-600">02</span>
+                        <i class="fa-solid fa-battery-quarter text-lg text-[#a83249]"></i>
+                    </div>
+                    <h3 class="text-lg font-bold leading-snug text-gray-100">Exaustão física</h3>
+                    <p class="mt-4 text-sm leading-relaxed text-gray-400">Para cobrir os custos e ter lucro, você se obriga a atender <strong class="font-semibold text-[#d25a6c]">diversas famílias</strong>, correria final de semana, <strong class="font-semibold text-[#d25a6c]">virando madrugadas editando</strong>.</p>
+                </div>
+                <div class="group bg-[#111111] p-7 md:p-8 transition-colors duration-300 hover:bg-[#151515]">
+                    <div class="mb-8 flex items-center justify-between">
+                        <span class="text-xs font-bold tracking-[0.2em] text-gray-600">03</span>
+                        <i class="fa-solid fa-hand-holding-dollar text-lg text-[#a83249]"></i>
+                    </div>
+                    <h3 class="text-lg font-bold leading-snug text-gray-100">Dinheiro na mesa</h3>
+                    <p class="mt-4 text-sm leading-relaxed text-gray-400">Falta de estratégia para <strong class="font-semibold text-[#d25a6c]">aumentar seu ticket</strong>, muitas vezes <strong class="font-semibold text-[#d25a6c]">oferecendo desconto</strong> com medo de não conseguir vender.</p>
+                </div>
+                <div class="group bg-[#111111] p-7 md:p-8 transition-colors duration-300 hover:bg-[#151515]">
+                    <div class="mb-8 flex items-center justify-between">
+                        <span class="text-xs font-bold tracking-[0.2em] text-gray-600">04</span>
+                        <i class="fa-solid fa-camera text-lg text-[#a83249]"></i>
+                    </div>
+                    <h3 class="text-lg font-bold leading-snug text-gray-100">Postar sem saber o que dizer</h3>
+                    <p class="mt-4 text-sm leading-relaxed text-gray-400">Você posta <strong class="font-semibold text-[#d25a6c]">fotos bonitas</strong>, mas não sabe o que publicar, quando começar ou como <strong class="font-semibold text-[#d25a6c]">criar desejo</strong> para lotar sua agenda.</p>
+                </div>
+                <div class="group bg-[#111111] p-7 md:p-8 transition-colors duration-300 hover:bg-[#151515]">
+                    <div class="mb-8 flex items-center justify-between">
+                        <span class="text-xs font-bold tracking-[0.2em] text-gray-600">05</span>
+                        <i class="fa-solid fa-comments text-lg text-[#a83249]"></i>
+                    </div>
+                    <h3 class="text-lg font-bold leading-snug text-gray-100">Perder vendas por não saber responder</h3>
+                    <p class="mt-4 text-sm leading-relaxed text-gray-400">A cliente fala <strong class="font-semibold text-[#d25a6c]">“vou pensar”</strong>, <strong class="font-semibold text-[#d25a6c]">“vou falar com meu marido”</strong> ou <strong class="font-semibold text-[#d25a6c]">“está caro”</strong>, e você não sabe como conduzir a conversa sem dar desconto.</p>
+                </div>
+                <div class="group bg-[#111111] p-7 md:p-8 transition-colors duration-300 hover:bg-[#151515]">
+                    <div class="mb-8 flex items-center justify-between">
+                        <span class="text-xs font-bold tracking-[0.2em] text-gray-600">06</span>
+                        <i class="fa-solid fa-chart-line text-lg text-[#a83249]"></i>
+                    </div>
+                    <h3 class="text-lg font-bold leading-snug text-gray-100">Não saber quantos ensaios precisa vender</h3>
+                    <p class="mt-4 text-sm leading-relaxed text-gray-400">Você investe no cenário, mas não sabe quantos ensaios precisa fazer para <strong class="font-semibold text-[#d25a6c]">recuperar o investimento</strong> e <strong class="font-semibold text-[#d25a6c]">começar a ter lucro</strong>.</p>
+                </div>
+                <div class="group bg-[#111111] p-7 md:p-8 transition-colors duration-300 hover:bg-[#151515]">
+                    <div class="mb-8 flex items-center justify-between">
+                        <span class="text-xs font-bold tracking-[0.2em] text-gray-600">07</span>
+                        <i class="fa-solid fa-boxes-stacked text-lg text-[#a83249]"></i>
+                    </div>
+                    <h3 class="text-lg font-bold leading-snug text-gray-100">Não saber montar pacotes e lotes</h3>
+                    <p class="mt-4 text-sm leading-relaxed text-gray-400">Você fica insegura para definir <strong class="font-semibold text-[#d25a6c]">preços, pacotes, lotes e benefícios</strong> — e acaba oferecendo uma campanha sem estratégia ou <strong class="font-semibold text-[#d25a6c]">barata demais</strong>.</p>
+                </div>
+                <div class="group bg-[#111111] p-7 md:p-8 transition-colors duration-300 hover:bg-[#151515]">
+                    <div class="mb-8 flex items-center justify-between">
+                        <span class="text-xs font-bold tracking-[0.2em] text-gray-600">08</span>
+                        <i class="fa-solid fa-file-lines text-lg text-[#a83249]"></i>
+                    </div>
+                    <h3 class="text-lg font-bold leading-snug text-gray-100">Não ter modelos para se basear</h3>
+                    <p class="mt-4 text-sm leading-relaxed text-gray-400">Você precisa criar tudo do zero: <strong class="font-semibold text-[#d25a6c]">campanha, contrato, pacotes e materiais de venda</strong>, sem saber como organizar ou apresentar sua oferta de forma profissional.</p>
+                </div>
+            </div>
+
+            <div class="mt-14 max-w-3xl mx-auto rounded-2xl border border-[#7a1024]/70 bg-[#14070a] px-6 py-5 text-center shadow-[0_12px_30px_rgba(0,0,0,0.25)]">
+                <p class="text-base md:text-xl font-bold text-[#FFE898]">Se você se identificou, a próxima etapa é mudar o processo.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative py-24 md:py-28 px-6 overflow-hidden bg-gradient-to-b from-[#080808] via-maroon-950 to-maroon-900 border-b border-gold/10">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[34rem] h-[18rem] bg-maroon-800/20 rounded-full blur-[120px]"></div>
+        </div>
+        <div class="relative z-10 max-w-6xl mx-auto">
+            <div class="max-w-3xl mx-auto text-center mb-14 md:mb-18">
+                <h2 class="text-3xl md:text-5xl font-bold leading-tight text-white">Cada problema da sua campanha tem uma solução.</h2>
+                <p class="mt-5 text-xl md:text-2xl font-serif italic font-bold text-[#FFE898]">Sua virada começa aqui.</p>
+                <p class="mt-6 text-base md:text-lg leading-relaxed text-gray-300">Pra você parar de improvisar, eu desenvolvi ferramentas práticas para você saber exatamente o que fazer em cada etapa — do conteúdo à venda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <article class="rounded-2xl border border-gold/20 bg-maroon-900/70 p-7 shadow-[0_12px_30px_rgba(0,0,0,0.25)]">
+                    <div class="flex items-center gap-3 mb-5"><i class="fa-solid fa-camera text-gold"></i><span class="text-xs font-bold uppercase tracking-widest text-gray-400">Você trava no conteúdo</span></div>
+                    <h3 class="text-xl font-bold text-white mb-3">Não sabe o que postar?</h3>
+                    <p class="text-gray-300 leading-relaxed">Eu tenho um <strong class="text-lightGold">Calendário de Conteúdo de Natal</strong> para você saber o que publicar, quando começar e como criar desejo.</p>
+                </article>
+                <article class="rounded-2xl border border-gold/20 bg-maroon-900/70 p-7 shadow-[0_12px_30px_rgba(0,0,0,0.25)]">
+                    <div class="flex items-center gap-3 mb-5"><i class="fa-solid fa-comments text-gold"></i><span class="text-xs font-bold uppercase tracking-widest text-gray-400">Você trava na conversa</span></div>
+                    <h3 class="text-xl font-bold text-white mb-3">Perde vendas quando ouve “vou pensar”?</h3>
+                    <p class="text-gray-300 leading-relaxed">Eu tenho <strong class="text-lightGold">Roteiros de Respostas para Objeções</strong> para você conduzir a conversa sem correr para o desconto.</p>
+                </article>
+                <article class="rounded-2xl border border-gold/20 bg-maroon-900/70 p-7 shadow-[0_12px_30px_rgba(0,0,0,0.25)]">
+                    <div class="flex items-center gap-3 mb-5"><i class="fa-solid fa-calculator text-gold"></i><span class="text-xs font-bold uppercase tracking-widest text-gray-400">Você trava na meta</span></div>
+                    <h3 class="text-xl font-bold text-white mb-3">Não sabe quantos ensaios vender?</h3>
+                    <p class="text-gray-300 leading-relaxed">Eu tenho uma <strong class="text-lightGold">Calculadora Reversa de Meta</strong> para você descobrir quanto precisa vender para recuperar o investimento e lucrar.</p>
+                </article>
+                <article class="rounded-2xl border border-gold/20 bg-maroon-900/70 p-7 shadow-[0_12px_30px_rgba(0,0,0,0.25)]">
+                    <div class="flex items-center gap-3 mb-5"><i class="fa-solid fa-boxes-stacked text-gold"></i><span class="text-xs font-bold uppercase tracking-widest text-gray-400">Você trava na oferta</span></div>
+                    <h3 class="text-xl font-bold text-white mb-3">Não sabe montar pacotes e lotes?</h3>
+                    <p class="text-gray-300 leading-relaxed">Eu tenho <strong class="text-lightGold">Modelos de Pacotes, Lotes e Benefícios</strong> para você criar uma oferta estratégica e aumentar o ticket.</p>
+                </article>
+                <article class="rounded-2xl border border-gold/20 bg-maroon-900/70 p-7 shadow-[0_12px_30px_rgba(0,0,0,0.25)]">
+                    <div class="flex items-center gap-3 mb-5"><i class="fa-solid fa-file-lines text-gold"></i><span class="text-xs font-bold uppercase tracking-widest text-gray-400">Você trava na execução</span></div>
+                    <h3 class="text-xl font-bold text-white mb-3">Não sabe como apresentar sua oferta?</h3>
+                    <p class="text-gray-300 leading-relaxed">Eu tenho <strong class="text-lightGold">modelos prontos de contrato, PDF de vendas e materiais da campanha</strong> para você apresentar sua oferta com profissionalismo, sem precisar criar tudo do zero.</p>
+                </article>
+                <article class="rounded-2xl border border-gold/20 bg-maroon-900/70 p-7 shadow-[0_12px_30px_rgba(0,0,0,0.25)]">
+                    <div class="flex items-center gap-3 mb-5"><i class="fa-solid fa-arrow-trend-up text-gold"></i><span class="text-xs font-bold uppercase tracking-widest text-gray-400">Você trava no crescimento</span></div>
+                    <h3 class="text-xl font-bold text-white mb-3">Trabalha muito e não aumenta o ticket?</h3>
+                    <p class="text-gray-300 leading-relaxed">Eu tenho a <strong class="text-lightGold">Arquitetura de Processo</strong> para mostrar como vender mais de uma vez durante a jornada da cliente.</p>
+                </article>
+            </div>
+
+            <div class="mt-12 max-w-3xl mx-auto rounded-3xl border border-gold/35 bg-gradient-to-br from-forest-900 to-forest-950 px-6 py-8 md:px-10 md:py-10 text-center shadow-[0_15px_40px_rgba(0,0,0,0.35)]">
+                <p class="text-xl md:text-2xl font-serif italic text-white">A boa notícia é que você também pode ter tudo isso <strong class="text-[#FFE898] not-italic">AGORA</strong> e construir uma campanha mais segura, organizada e lucrativa.</p>
+                <a href="#oferta" class="mt-7 inline-flex items-center justify-center bg-gold text-maroon-950 text-base md:text-lg font-black py-4 px-10 rounded-full shadow-[0_0_30px_rgba(255,209,91,0.45)] hover:shadow-[0_0_40px_rgba(255,209,91,0.7)] hover:scale-105 transition-transform duration-300">Quero meu acesso agora</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 relative z-10 bg-[#050000]">
+        <div class="max-w-5xl mx-auto text-center relative z-20">
+            <div>
+                <h2 class="text-3xl md:text-[3.2rem] font-bold leading-tight mb-8">
+                    Veja como esse processo funciona na prática.
+                    <span class="block mt-4 text-gold font-serif italic font-bold">Cada etapa pode gerar uma nova oportunidade de venda.</span>
+                </h2>
+                
+                <p class="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-16 font-light">
+                    Foi por isso que eu criei a <strong class="text-white font-bold border-b border-gold/50 pb-1">Arquitetura de Processo da Operação Natal</strong>: um método para transformar o agendamento, o ensaio, a seleção e a entrega em momentos estratégicos de venda — sem depender de descontos, sem trabalhar enlouquecidamente e sem virar madrugadas editando.
+                </p>
+            </div>
+        
+        <div class="relative w-full max-w-5xl mx-auto rounded-[2.5rem] shadow-[0_20px_70px_rgba(0,0,0,0.95)] border-2 border-champagne-500/40 overflow-hidden font-jakarta bg-[#170105] aspect-video min-h-[400px]">
+            <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,#540917_0%,#33040c_55%,#160105_100%)]"></div>
+                <div class="bokeh-dot w-28 h-28 bg-[#f5d076] top-[18%] left-[28%] opacity-30"></div>
+                <div class="bokeh-dot w-44 h-44 bg-[#e5b64c] top-[10%] right-[32%] opacity-25" style="animation-delay: -2s;"></div>
+                <div class="bokeh-dot w-20 h-20 bg-[#fef08a] top-[26%] right-[38%] opacity-35" style="animation-delay: -3.5s;"></div>
+                <div class="bokeh-dot w-32 h-32 bg-[#eab308] bottom-[18%] left-[16%] opacity-20" style="animation-delay: -1.2s;"></div>
+                <div class="bokeh-dot w-24 h-24 bg-[#fde047] bottom-[30%] left-[24%] opacity-25" style="animation-delay: -4.5s;"></div>
+                <div class="bokeh-dot w-36 h-36 bg-[#ca8a04] bottom-[15%] right-[22%] opacity-20" style="animation-delay: -2.8s;"></div>
+            </div>
+
+            <div class="absolute inset-0 w-full h-full relative flex flex-col justify-center items-center z-10 bg-gradient-to-b from-[#3a050f]/85 via-[#230208]/90 to-[#150104]/95 backdrop-blur-sm selection:bg-champagne-500 selection:text-wine-950">
+                <div id="dim-overlay" class="absolute inset-0 bg-[#0a0103]/85 opacity-0 pointer-events-none z-[35] transition-opacity duration-[1500ms] ease-in-out"></div>
+
+                <div class="absolute top-0 left-0 w-32 sm:w-48 md:w-64 h-32 sm:h-48 md:h-64 pointer-events-none z-20">
+                    <svg class="absolute top-0 left-0 w-full h-full" viewBox="0 0 300 300" fill="none">
+                        <path d="M 0 0 L 210 0 L 0 210 Z" fill="#082b1b" fill-opacity="0.95" />
+                        <line x1="210" y1="0" x2="0" y2="210" stroke="#d4af37" stroke-width="2.5" stroke-opacity="0.85" />
+                        <g transform="translate(15, 20) rotate(18)">
+                            <path d="M 0 0 Q 70 45 150 110" stroke="#041a10" stroke-width="4.5" stroke-linecap="round" />
+                            <path d="M 25 15 L 15 35 M 40 25 L 30 50 M 60 38 L 52 68 M 80 54 L 75 88 M 100 70 L 100 106 M 120 86 L 125 120" stroke="#15803d" stroke-width="3" stroke-linecap="round" />
+                            <path d="M 30 18 L 45 5 M 50 30 L 72 14 M 70 44 L 96 28 M 90 58 L 120 44 M 110 74 L 140 60" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" />
+                            <path d="M 25 15 L 20 40 M 45 27 L 42 62 M 65 41 L 68 80 M 85 57 L 90 98 M 105 72 L 115 116" stroke="#166534" stroke-width="2.2" stroke-linecap="round" />
+                        </g>
+                        <g transform="translate(0, 5) rotate(5)">
+                            <path d="M 20 30 Q 90 70 170 125" stroke="#041a10" stroke-width="4" stroke-linecap="round" />
+                            <path d="M 40 38 L 32 64 M 65 52 L 60 84 M 90 68 L 88 104 M 115 85 L 118 122 M 140 102 L 148 138" stroke="#15803d" stroke-width="2.8" stroke-linecap="round" />
+                            <path d="M 45 40 L 65 22 M 70 55 L 98 36 M 95 72 L 128 54 M 120 88 L 154 70" stroke="#4ade80" stroke-width="2" stroke-linecap="round" />
+                        </g>
+                        <defs>
+                            <radialGradient id="redBaubleGlow" cx="35%" cy="30%" r="65%">
+                                <stop offset="0%" stop-color="#ff7b8c" />
+                                <stop offset="30%" stop-color="#dc2626" />
+                                <stop offset="75%" stop-color="#7f1d1d" />
+                                <stop offset="100%" stop-color="#3b070e" />
+                            </radialGradient>
+                            <radialGradient id="goldBaubleGlow" cx="35%" cy="30%" r="65%">
+                                <stop offset="0%" stop-color="#fff8db" />
+                                <stop offset="35%" stop-color="#f5d076" />
+                                <stop offset="75%" stop-color="#b4831f" />
+                                <stop offset="100%" stop-color="#5a3d07" />
+                            </radialGradient>
+                        </defs>
+                        <circle cx="58" cy="88" r="28" fill="url(#redBaubleGlow)" filter="drop-shadow(0 6px 12px rgba(0,0,0,0.85))" />
+                        <ellipse cx="48" cy="76" rx="8" ry="5" fill="#ffffff" opacity="0.6" transform="rotate(-25 48 76)" />
+                        <rect x="54" y="56" width="8" height="6" rx="1.5" fill="#d4af37" />
+                        <circle cx="125" cy="115" r="25" fill="url(#goldBaubleGlow)" filter="drop-shadow(0 6px 12px rgba(0,0,0,0.85))" />
+                        <ellipse cx="116" cy="105" rx="7" ry="4" fill="#ffffff" opacity="0.55" transform="rotate(-25 116 105)" />
+                        <rect x="121" y="86" width="8" height="6" rx="1.5" fill="#fef08a" />
+                        <g transform="translate(95, 45) scale(0.65)" stroke="#f6e09e" stroke-width="2" stroke-linecap="round">
+                            <line x1="0" y1="-26" x2="0" y2="26" />
+                            <line x1="-26" y1="0" x2="26" y2="0" />
+                            <line x1="-18" y1="-18" x2="18" y2="18" />
+                            <line x1="-18" y1="18" x2="18" y2="-18" />
+                            <path d="M -6 -18 L 0 -24 L 6 -18 M -6 18 L 0 24 L 6 18" fill="none" />
+                            <path d="M -18 -6 L -24 0 L -18 6 M 18 -6 L 24 0 L 18 6" fill="none" />
+                            <circle cx="0" cy="0" r="3.5" fill="#d4af37" />
+                        </g>
+                        <path class="star-sparkle" d="M 28 140 L 31 148 L 40 149 L 33 155 L 35 164 L 28 158 L 21 164 L 23 155 L 16 149 L 25 148 Z" fill="#fde047" />
+                        <path class="star-sparkle" style="animation-delay: 1.5s;" d="M 175 45 L 177 51 L 184 52 L 178 57 L 180 63 L 175 59 L 170 63 L 172 57 L 166 52 L 173 51 Z" fill="#f6df9a" />
+                    </svg>
+                </div>
+
+                <div class="absolute bottom-0 right-0 w-40 sm:w-56 md:w-80 h-40 sm:h-56 md:h-80 pointer-events-none z-20">
+                    <svg class="absolute bottom-0 right-0 w-full h-full" viewBox="0 0 320 320" fill="none">
+                        <path d="M 320 110 L 320 320 L 110 320 Z" fill="#062215" fill-opacity="0.95" />
+                        <line x1="320" y1="110" x2="110" y2="320" stroke="#d4af37" stroke-width="2.5" stroke-opacity="0.85" />
+                        <g transform="translate(145, 175) rotate(-145)">
+                            <path d="M 0 0 Q 75 40 160 100" stroke="#041a10" stroke-width="4.5" stroke-linecap="round" />
+                            <path d="M 30 18 L 18 42 M 55 30 L 45 60 M 80 44 L 75 80 M 110 60 L 112 100" stroke="#15803d" stroke-width="3" stroke-linecap="round" />
+                            <path d="M 35 20 L 52 6 M 62 34 L 88 18 M 88 50 L 120 32 M 115 66 L 150 48" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" />
+                        </g>
+                        <circle cx="165" cy="205" r="18" fill="url(#redBaubleGlow)" filter="drop-shadow(0 4px 10px rgba(0,0,0,0.85))" />
+                        <ellipse cx="159" cy="199" rx="5" ry="3" fill="#ffffff" opacity="0.6" transform="rotate(-25 159 199)" />
+                        <g transform="translate(195, 195) rotate(-16)">
+                            <rect x="0" y="0" width="125" height="125" rx="14" fill="#0c4f30" stroke="#166534" stroke-width="2" filter="drop-shadow(-8px -8px 20px rgba(0,0,0,0.7))" />
+                            <rect x="52" y="0" width="22" height="125" fill="url(#goldRibbonGradient)" />
+                            <rect x="0" y="52" width="125" height="22" fill="url(#goldRibbonGradient)" />
+                            <g transform="translate(63, 63)">
+                                <defs>
+                                    <linearGradient id="goldRibbonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#fff6d1" />
+                                        <stop offset="35%" stop-color="#e8bd59" />
+                                        <stop offset="70%" stop-color="#b3821a" />
+                                        <stop offset="100%" stop-color="#fde047" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M 0 0 L -25 -25 L 0 -35 L 25 -25 Z" fill="#f8e39c" stroke="#aa7f1d" stroke-width="1.2" />
+                                <path d="M 0 0 L 25 -25 L 35 0 L 25 25 Z" fill="#ebbe57" stroke="#aa7f1d" stroke-width="1.2" />
+                                <path d="M 0 0 L 25 25 L 0 35 L -25 25 Z" fill="#d29d2b" stroke="#87600d" stroke-width="1.2" />
+                                <path d="M 0 0 L -25 25 L -35 0 L -25 -25 Z" fill="#ebbe57" stroke="#aa7f1d" stroke-width="1.2" />
+                                <path d="M 0 0 L -18 -10 L -10 -24 Z" fill="#fffae0" />
+                                <path d="M 0 0 L 18 -10 L 10 -24 Z" fill="#f3cb69" />
+                                <path d="M 0 0 L 18 10 L 10 24 Z" fill="#bd8718" />
+                                <path d="M 0 0 L -18 10 L -10 24 Z" fill="#f3cb69" />
+                                <circle cx="0" cy="0" r="8" fill="#fff5cc" stroke="#aa7f1d" stroke-width="1.5" />
+                            </g>
+                        </g>
+                        <path class="star-sparkle" style="animation-delay: 0.8s;" d="M 125 235 L 128 243 L 137 244 L 130 250 L 132 258 L 125 253 L 118 258 L 120 250 L 113 244 L 122 243 Z" fill="#fde047" />
+                        <path class="star-sparkle" style="animation-delay: 2.2s;" d="M 148 290 L 150 295 L 156 296 L 151 300 L 153 306 L 148 302 L 143 306 L 145 300 L 140 296 L 146 295 Z" fill="#f6df9a" />
+                    </svg>
+                </div>
+
+                <main class="relative w-full h-full flex-1 flex items-center justify-center overflow-hidden">
+                    <div class="relative w-full h-full max-w-[1360px]">
+                        <svg id="road-svg" class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1600 900" fill="none" preserveAspectRatio="xMidYMid meet">
+                            <defs>
+                                <filter id="road-deep-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feDropShadow dx="0" dy="14" stdDeviation="22" flood-color="#000000" flood-opacity="0.98" />
+                                </filter>
+                                <linearGradient id="pineVelvetGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#082316" />
+                                    <stop offset="35%" stop-color="#143d28" />
+                                    <stop offset="68%" stop-color="#2a0d14" />
+                                    <stop offset="100%" stop-color="#092216" />
+                                </linearGradient>
+                                <linearGradient id="goldFoilGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#d4af37" />
+                                    <stop offset="25%" stop-color="#fdf4cf" />
+                                    <stop offset="50%" stop-color="#caa031" />
+                                    <stop offset="75%" stop-color="#fcedb6" />
+                                    <stop offset="100%" stop-color="#b88d22" />
+                                </linearGradient>
+                                <linearGradient id="warmLightBeam" x1="0%" y1="50%" x2="100%" y2="50%">
+                                    <stop offset="0%" stop-color="#fff8db" stop-opacity="0.85" />
+                                    <stop offset="40%" stop-color="#fde047" stop-opacity="0.45" />
+                                    <stop offset="100%" stop-color="#fef08a" stop-opacity="0" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M 120 230 C 500 230, 720 180, 880 320 C 1040 470, 720 620, 680 720 C 640 820, 1140 820, 1440 710" fill="none" class="road-contour" stroke-width="116" filter="url(#road-deep-shadow)" stroke-linecap="round" />
+                            <path id="road-main-path" d="M 120 230 C 500 230, 720 180, 880 320 C 1040 470, 720 620, 680 720 C 640 820, 1140 820, 1440 710" fill="none" class="road-pavement" stroke-width="98" stroke-linecap="round" />
+                            <path d="M 120 230 C 500 230, 720 180, 880 320 C 1040 470, 720 620, 680 720 C 640 820, 1140 820, 1440 710" fill="none" class="road-gold-edge" stroke-width="92" stroke-linecap="round" />
+                            <path d="M 120 230 C 500 230, 720 180, 880 320 C 1040 470, 720 620, 680 720 C 640 820, 1140 820, 1440 710" fill="none" class="road-sparkle-dash" stroke-width="5" stroke-linecap="round" />
+                            <g id="car-group" transform="translate(120, 230) rotate(0)">
+                                <ellipse cx="0" cy="0" rx="36" ry="24" fill="#fde047" opacity="0.32" class="animate-pulse" />
+                                <g transform="translate(-24, -15)">
+                                    <rect x="2" y="3" width="46" height="24" rx="8" fill="#a81c2f" stroke="#f6df9a" stroke-width="2" />
+                                    <rect x="12" y="5" width="23" height="20" rx="5" fill="#082b1b" stroke="#d4af37" stroke-width="1.6" />
+                                    <rect x="15" y="7" width="17" height="16" rx="3" fill="#fef9c3" opacity="0.8" />
+                                    <rect x="17" y="-2" width="13" height="7" rx="1.5" fill="#15803d" stroke="#fef08a" stroke-width="1" />
+                                    <line x1="23.5" y1="-2" x2="23.5" y2="5" stroke="#fef08a" stroke-width="1.2" />
+                                    <circle cx="45" cy="7" r="3" fill="#fffbeb" stroke="#f59e0b" stroke-width="1" />
+                                    <circle cx="45" cy="23" r="3" fill="#fffbeb" stroke="#f59e0b" stroke-width="1" />
+                                    <circle cx="5" cy="7" r="2.5" fill="#ef4444" />
+                                    <circle cx="5" cy="23" r="2.5" fill="#ef4444" />
+                                    <polygon points="48,6 88,-5 88,35 48,24" fill="url(#warmLightBeam)" />
+                                </g>
+                            </g>
+                        </svg>
+
+                        <div id="step-node-1" class="checkpoint absolute top-[14%] sm:top-[16%] left-[10%] sm:left-[12%] -translate-x-1/2 flex flex-col items-center group z-30" data-step="1" data-t="0.08">
+                            <div class="checkpoint-circle relative w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full border-2 border-champagne-400/90 flex items-center justify-center">
+                                <svg class="w-5 h-5 sm:w-8 sm:h-8 md:w-9 md:h-9 text-champagne-200 group-hover:scale-110 transition-transform drop-shadow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                                <div class="money-badge checkpoint-badge-center absolute -top-3.5 px-3 py-0.5 rounded-full bg-gradient-to-r from-emerald-600 to-emerald-500 text-champagne-100 font-extrabold text-[0.65rem] sm:text-sm md:text-base shadow-[0_0_15px_rgba(16,185,129,0.7)] border border-champagne-300 flex items-center whitespace-nowrap z-40">
+                                    <span class="tracking-wider drop-shadow">$</span>
+                                </div>
+                            </div>
+                            <div class="headline-card mt-2.5 px-2.5 sm:px-4 py-1 sm:py-1.5 rounded-xl text-center">
+                                <h3 class="font-serif text-champagne-200 font-semibold text-[0.65rem] sm:text-sm md:text-base tracking-normal whitespace-nowrap">No agendamento</h3>
+                            </div>
+                        </div>
+
+                        <div id="step-node-2" class="checkpoint absolute top-[24%] sm:top-[26%] left-[58%] sm:left-[60%] -translate-x-1/2 flex flex-col items-center group z-30" data-step="2" data-t="0.43">
+                            <div class="checkpoint-circle relative w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full border-2 border-champagne-400/90 flex items-center justify-center">
+                                <svg class="w-5 h-5 sm:w-8 sm:h-8 md:w-9 md:h-9 text-champagne-200 group-hover:scale-110 transition-transform drop-shadow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <div class="money-badge checkpoint-badge-center absolute -top-3.5 px-3 py-0.5 rounded-full bg-gradient-to-r from-emerald-600 to-emerald-500 text-champagne-100 font-extrabold text-[0.65rem] sm:text-sm md:text-base shadow-[0_0_15px_rgba(16,185,129,0.7)] border border-champagne-300 flex items-center whitespace-nowrap z-40">
+                                    <span class="tracking-wider drop-shadow">$$</span>
+                                </div>
+                            </div>
+                            <div class="headline-card mt-2.5 px-2.5 sm:px-4 py-1 sm:py-1.5 rounded-xl text-center">
+                                <h3 class="font-serif text-champagne-200 font-semibold text-[0.65rem] sm:text-sm md:text-base tracking-normal whitespace-nowrap">No dia do ensaio</h3>
+                            </div>
+                        </div>
+
+                        <div id="step-node-3" class="checkpoint absolute top-[66%] sm:top-[68%] left-[34%] sm:left-[36%] -translate-x-1/2 flex flex-col items-center group z-30" data-step="3" data-t="0.70">
+                            <div class="checkpoint-circle relative w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full border-2 border-champagne-400/90 flex items-center justify-center">
+                                <svg class="w-5 h-5 sm:w-8 sm:h-8 md:w-9 md:h-9 text-champagne-200 group-hover:scale-110 transition-transform drop-shadow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 21h8m-4-4v4" />
+                                </svg>
+                                <div class="money-badge checkpoint-badge-center absolute -top-3.5 px-3 py-0.5 rounded-full bg-gradient-to-r from-emerald-600 to-emerald-500 text-champagne-100 font-extrabold text-[0.65rem] sm:text-sm md:text-base shadow-[0_0_15px_rgba(16,185,129,0.7)] border border-champagne-300 flex items-center whitespace-nowrap z-40">
+                                    <span class="tracking-wider drop-shadow">$$$</span>
+                                </div>
+                            </div>
+                            <div class="headline-card mt-2.5 px-3.5 sm:px-4 py-1.5 rounded-xl text-center">
+                                <h3 class="font-serif text-champagne-200 font-semibold text-xs sm:text-sm md:text-base tracking-normal whitespace-nowrap">Na seleção de fotos</h3>
+                            </div>
+                        </div>
+
+                        <div id="step-node-4" class="checkpoint absolute top-[74%] sm:top-[76%] right-[6%] sm:right-[8%] md:right-[10%] flex flex-col items-center group z-30" data-step="4" data-t="0.94">
+                            <div class="checkpoint-circle relative w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full border-2 border-champagne-400/90 flex items-center justify-center">
+                                <svg class="w-5 h-5 sm:w-8 sm:h-8 md:w-9 md:h-9 text-champagne-200 group-hover:scale-110 transition-transform drop-shadow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                                </svg>
+                                <div class="money-badge checkpoint-badge-center absolute -top-3.5 px-3 py-0.5 rounded-full bg-gradient-to-r from-emerald-600 to-emerald-500 text-champagne-100 font-extrabold text-[0.65rem] sm:text-sm md:text-base shadow-[0_0_15px_rgba(16,185,129,0.7)] border border-champagne-300 flex items-center whitespace-nowrap z-40">
+                                    <span class="tracking-wider drop-shadow">$$$$</span>
+                                </div>
+                            </div>
+                            <div class="headline-card mt-2.5 px-3.5 sm:px-4 py-1.5 rounded-xl text-center">
+                                <h3 class="font-serif text-champagne-200 font-semibold text-xs sm:text-sm md:text-base tracking-normal whitespace-nowrap">Na entrega</h3>
+                            </div>
+                        </div>
+
+                    </div>
+                </main>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 relative overflow-hidden bg-maroon-900">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-[20%] right-[-10%] w-[30rem] h-[30rem] bg-gold rounded-full mix-blend-overlay filter blur-[150px] opacity-10"></div>
+            <div class="absolute bottom-[-10%] left-[-10%] w-[40rem] h-[40rem] bg-maroon-700 rounded-full mix-blend-screen filter blur-[150px] opacity-30"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-white">
+                Veja o que você terá acesso no <span class="text-[#FFE898] font-serif italic drop-shadow-[0_0_20px_rgba(255,209,91,0.8)]">Operação Natal 2026</span>
+            </h2>
+            
+            <div class="flex flex-col gap-8">
+                <div class="bg-gradient-to-br from-maroon-800 to-maroon-950 p-6 md:p-8 rounded-2xl border border-gold/20 flex flex-col md:flex-row items-center md:items-stretch text-center md:text-left gap-6 transition-transform hover:-translate-y-1 duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.5)] group">
+                    <div class="w-full md:w-5/12 overflow-hidden rounded-xl border border-gold/30 relative">
+                        <img src="https://i.imgur.com/UEObuhd.jpg" alt="Aula 1 - Planejamento Estratégico" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-maroon-950/40 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <div class="w-full md:w-7/12 flex flex-col justify-center py-2 md:py-4">
+                        <h3 class="text-[#FFE898] text-sm tracking-widest uppercase font-bold mb-2 drop-shadow-[0_0_12px_rgba(255,209,91,0.7)]">Conteúdo Liberado</h3>
+                        <h2 class="text-2xl md:text-3xl font-bold text-white leading-tight font-serif">Aula 1 — Planejamento Estratégico da Campanha de Natal</h2>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-maroon-800 to-maroon-950 p-6 md:p-8 rounded-2xl border border-gold/20 flex flex-col md:flex-row items-center md:items-stretch text-center md:text-left gap-6 transition-transform hover:-translate-y-1 duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.5)] group">
+                    <div class="w-full md:w-5/12 overflow-hidden rounded-xl border border-gold/30 relative">
+                        <img src="https://i.imgur.com/WzUiYzp.jpg" alt="Aula 2 - Como Criar Desejo" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-maroon-950/40 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <div class="w-full md:w-7/12 flex flex-col justify-center py-2 md:py-4">
+                        <h3 class="text-[#FFE898] text-sm tracking-widest uppercase font-bold mb-2 drop-shadow-[0_0_12px_rgba(255,209,91,0.7)]">Conteúdo Liberado</h3>
+                        <h2 class="text-2xl md:text-3xl font-bold text-white leading-tight font-serif">Aula 2 — Como Criar Desejo e Lotar as Primeiras Vagas</h2>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-maroon-800 to-maroon-950 p-6 md:p-8 rounded-2xl border border-gold/20 flex flex-col md:flex-row items-center md:items-stretch text-center md:text-left gap-6 transition-transform hover:-translate-y-1 duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.5)] group">
+                    <div class="w-full md:w-5/12 overflow-hidden rounded-xl border border-gold/30 relative">
+                        <img src="https://i.imgur.com/ww3QCGT.jpg" alt="Aula 3 - Experiência que Vende" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-maroon-950/40 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <div class="w-full md:w-7/12 flex flex-col justify-center py-2 md:py-4">
+                        <h3 class="text-[#FFE898] text-sm tracking-widest uppercase font-bold mb-2 drop-shadow-[0_0_12px_rgba(255,209,91,0.7)]">Conteúdo Liberado</h3>
+                        <h2 class="text-2xl md:text-3xl font-bold text-white leading-tight font-serif">Aula 3 — Transforme o Ensaio em uma Experiência que Vende</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 mx-auto max-w-3xl rounded-3xl border border-gold/35 bg-gradient-to-br from-forest-900 to-forest-950 px-6 py-7 md:px-10 md:py-8 text-center shadow-[0_15px_40px_rgba(0,0,0,0.35)]">
+                <a href="#oferta" class="inline-flex items-center justify-center bg-gold text-maroon-950 text-lg md:text-xl font-black py-5 px-12 rounded-full shadow-[0_0_30px_rgba(255,209,91,0.45)] hover:shadow-[0_0_40px_rgba(255,209,91,0.7)] hover:scale-105 transition-transform duration-300">Quero meu acesso agora</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 border-y border-gold/10 bg-gradient-to-b from-maroon-900 to-forest-950 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-1/2 flex justify-center relative z-10">
+                <img src="https://i.imgur.com/6MVw7dG.jpg" alt="Luana Duarte" class="rounded-2xl shadow-[0_15px_40px_rgba(0,0,0,0.6)] border border-gold/20 w-full max-w-sm object-cover">
+            </div>
+            <div class="w-full md:w-1/2 text-center md:text-left relative z-10">
+                <h3 class="text-lightGold font-bold tracking-widest uppercase mb-2 drop-shadow-[0_0_10px_rgba(255,209,91,0.5)]">Quem criou o treinamento</h3>
+                <h2 class="text-4xl font-bold mb-6 font-serif">Luana Duarte</h2>
+                <p class="text-gray-100 leading-relaxed mb-6 italic">
+                    "Prazer, eu já estive exatamente onde você está hoje."
+                </p>
+                <p class="text-gray-200 leading-relaxed mb-6">
+                    Há mais de 10 anos eu fotografo em um estúdio no pé da Serra Gaúcha a 40 minutos de <span class="text-[#FFE898] font-bold drop-shadow-[0_0_8px_rgba(255,232,152,0.5)]">Gramado</span>, vivendo a mesma rotina que você.
+                </p>
+                <p class="text-gray-200 leading-relaxed mb-6">
+                    Nas minhas campanhas de Natal, eu sempre invisto pesado em cenários impecáveis, mas no inicio da minha carreira a minha margem de lucro sempre era esmagada. Para empatar o caixa, eu precisava fazer varios ensaios por dia. O resultado? Exaustão física, noites em claro editando e a frustração de trabalhar muito para ver pouco dinheiro no fim do ano.
+                </p>
+                <p class="text-gray-200 leading-relaxed mb-6">
+                    Tudo mudou quando parei de focar em volume e passei a aplicar vendas inteligentes. Desenvolvi uma forma prática de arquitetura de processo de venda em etapas onde o upsell se tornou rotina e que me permitiu faturar 5 dígitos no Natal, trabalhando metade do tempo.
+                </p>
+                <p class="text-gray-200 leading-relaxed">
+                    Hoje, eu abro a caixa preta do que eu aplico para que você construa a campanha mais lucrativa da sua carreira.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="oferta" class="py-24 px-6 relative overflow-hidden bg-forest-950">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-forest-800 rounded-full mix-blend-overlay filter blur-[100px] opacity-40"></div>
+            <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold rounded-full mix-blend-overlay filter blur-[150px] opacity-10"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">
+                    Tudo o que você recebe para <i class="text-[#FFD15B] font-serif drop-shadow-[0_0_25px_rgba(255,209,91,0.85)]">transformar sua campanha</i>
+                </h2>
+                <div class="max-w-3xl mx-auto mt-8 rounded-2xl border border-gold/30 bg-maroon-950/60 px-6 py-6 md:px-10 md:py-7">
+                    <h3 class="text-2xl md:text-3xl font-bold text-white">O seu investimento é no treinamento.</h3>
+                    <p class="mt-3 text-base md:text-lg leading-relaxed text-gray-300">Mas, para que você consiga aplicar tudo com mais segurança, <strong class="text-[#FFE898]">os 5 bônus entram agora sem custo adicional.</strong></p>
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-br from-forest-900 to-forest-950 border border-gold/50 rounded-3xl p-6 md:p-12 shadow-[0_0_40px_rgba(0,0,0,0.8),inset_0_0_20px_rgba(255,209,91,0.1)] relative overflow-hidden">
+                    
+                    <div class="absolute top-0 left-0 w-24 h-24 border-t-2 border-l-2 border-gold/60 rounded-tl-3xl m-4 pointer-events-none"></div>
+                    <div class="absolute bottom-0 right-0 w-24 h-24 border-b-2 border-r-2 border-gold/60 rounded-br-3xl m-4 pointer-events-none"></div>
+
+                    <ul class="space-y-6 relative z-10">
+                        <li class="flex flex-col md:flex-row md:items-center justify-between border-b border-gold/30 pb-6 gap-4">
+                            <div class="flex items-center gap-4">
+                                <div class="text-lightGold text-xl md:text-2xl drop-shadow-[0_0_15px_rgba(255,209,91,0.8)]">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-lightGold mb-1">Treinamento principal</p>
+                                    <h3 class="text-lg md:text-xl font-bold text-white">Operação Natal 2026</h3>
+                                </div>
+                            </div>
+                            <div class="md:text-right shrink-0 ml-10 md:ml-0 flex items-center md:block">
+                                <span class="text-gray-300 line-through text-lg md:text-xl font-bold block">De R$ 497,00</span>
+                            </div>
+                        </li>
+
+                        <li class="flex flex-col md:flex-row md:items-center justify-between border-b border-white/10 pb-6 gap-4">
+                            <div class="flex items-center gap-4">
+                                <div class="text-lightGold text-xl md:text-2xl drop-shadow-[0_0_15px_rgba(255,209,91,0.8)]">
+                                    <i class="fa-solid fa-gift"></i>
+                                </div>
+                                <h3 class="text-lg md:text-xl font-bold text-white">Calendário de Conteúdo de Natal</h3>
+                            </div>
+                            <div class="md:text-right shrink-0 ml-10 md:ml-0 flex items-center md:block">
+                                <span class="text-gray-300 line-through text-lg md:text-xl font-bold block">De R$ 97,00</span>
+                            </div>
+                        </li>
+
+                        <li class="flex flex-col md:flex-row md:items-center justify-between border-b border-white/10 pb-6 gap-4">
+                            <div class="flex items-center gap-4">
+                                <div class="text-lightGold text-xl md:text-2xl drop-shadow-[0_0_15px_rgba(255,209,91,0.8)]">
+                                    <i class="fa-solid fa-gift"></i>
+                                </div>
+                                <h3 class="text-lg md:text-xl font-bold text-white">Roteiros para Responder Objeções</h3>
+                            </div>
+                            <div class="md:text-right shrink-0 ml-10 md:ml-0 flex items-center md:block">
+                                <span class="text-gray-300 line-through text-lg md:text-xl font-bold block">De R$ 147,00</span>
+                            </div>
+                        </li>
+
+                        <li class="flex flex-col md:flex-row md:items-center justify-between border-b border-white/10 pb-6 gap-4">
+                            <div class="flex items-center gap-4">
+                                <div class="text-lightGold text-xl md:text-2xl drop-shadow-[0_0_15px_rgba(255,209,91,0.8)]">
+                                    <i class="fa-solid fa-gift"></i>
+                                </div>
+                                <h3 class="text-lg md:text-xl font-bold text-white">Calculadora Reversa de Meta</h3>
+                            </div>
+                            <div class="md:text-right shrink-0 ml-10 md:ml-0 flex items-center md:block">
+                                <span class="text-gray-300 line-through text-lg md:text-xl font-bold block">De R$ 67,00</span>
+                            </div>
+                        </li>
+
+                        <li class="flex flex-col md:flex-row md:items-center justify-between border-b border-white/10 pb-6 gap-4">
+                            <div class="flex items-center gap-4">
+                                <div class="text-lightGold text-xl md:text-2xl drop-shadow-[0_0_15px_rgba(255,209,91,0.8)]">
+                                    <i class="fa-solid fa-gift"></i>
+                                </div>
+                                <h3 class="text-lg md:text-xl font-bold text-white">Modelos de Pacotes e Lotes</h3>
+                            </div>
+                            <div class="md:text-right shrink-0 ml-10 md:ml-0 flex items-center md:block">
+                                <span class="text-gray-300 line-through text-lg md:text-xl font-bold block">De R$ 197,00</span>
+                            </div>
+                        </li>
+
+                        <li class="flex flex-col md:flex-row md:items-center justify-between pb-2 gap-4">
+                            <div class="flex items-center gap-4">
+                                <div class="text-lightGold text-xl md:text-2xl drop-shadow-[0_0_15px_rgba(255,209,91,0.8)]">
+                                    <i class="fa-solid fa-gift"></i>
+                                </div>
+                                <h3 class="text-lg md:text-xl font-bold text-white">Kit de Materiais Profissionais</h3>
+                            </div>
+                            <div class="md:text-right shrink-0 ml-10 md:ml-0 flex items-center md:block">
+                                <span class="text-gray-300 line-through text-lg md:text-xl font-bold block">De R$ 147,00</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="mt-8 pt-8 border-t-2 border-dashed border-gold/40 text-center relative z-10">
+                        <div class="absolute left-1/2 -top-4 -translate-x-1/2 bg-forest-950 px-4 text-gold border border-gold/30 rounded-full py-1">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <p class="text-sm md:text-base font-bold uppercase tracking-[0.2em] text-gray-400">Valor total da entrega</p>
+                        <p class="mt-1 text-5xl md:text-6xl font-black tracking-tight text-[#FFE898] line-through decoration-2">R$ 1.152,00</p>
+
+                        <div class="mt-8 mx-auto max-w-3xl rounded-[2rem] border-2 border-gold/40 bg-gradient-to-br from-[#7a1024] via-maroon-800 to-maroon-950 px-6 py-8 md:px-10 md:py-10 shadow-[0_0_45px_rgba(122,16,36,0.35)]">
+                            <h2 class="text-3xl md:text-5xl font-bold leading-tight font-serif text-white">Chegou a hora da sua decisão.</h2>
+                            <p class="mt-4 text-lg md:text-2xl font-bold leading-relaxed text-gray-100">Garanta o treinamento <span class="text-[#FFE898]">Operação Natal 2026</span><br><span class="text-base md:text-xl">+ 5 materiais bônus sem custo adicional</span></p>
+
+                            <!-- Bloco de Preço Ajustado -->
+                            <div class="mt-10 flex justify-center items-start text-[#FFD15B] drop-shadow-[0_0_35px_rgba(255,209,91,0.8)] leading-none">
+                                <span class="text-2xl md:text-3xl font-bold mt-6 md:mt-8 mr-1">R$</span>
+                                <span class="text-[7rem] md:text-[10rem] font-black tracking-tighter font-serif -mt-8 md:-mt-12">19</span>
+                                <span class="text-4xl md:text-5xl font-bold mt-2 md:mt-4 ml-1">,70</span>
+                            </div>
+                            <p class="mt-2 text-base md:text-lg text-gray-200 font-medium">em 12x ou à vista 197,00</p>
+
+                            <div class="mt-6 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-maroon-950/60 px-5 py-2.5 text-gray-100 text-sm md:text-base font-medium">
+                                <i class="fa-regular fa-clock text-gold"></i>
+                                E acaba em pouco tempo:
+                                <span id="countdown-timer" class="font-mono font-bold text-gold text-lg tracking-wider">10:00</span>
+                            </div>
+
+                            <a href="https://pay.hotmart.com/P93210835L" class="mt-8 bg-gold text-maroon-950 text-xl md:text-2xl font-black py-6 px-10 rounded-full inline-block w-full shadow-[0_0_40px_rgba(255,209,91,0.6)] hover:shadow-[0_0_50px_rgba(255,209,91,0.8)] hover:scale-105 animate-pulse transition-transform duration-300">
+                                Quero garantir meu acesso
+                            </a>
+                            
+                            <!-- Imagem Nova Inserida -->
+                            <img src="https://i.imgur.com/SkZGaNk.png" alt="Compra Segura" class="h-[72px] md:h-24 mx-auto mt-6 opacity-90 hover:opacity-100 transition-opacity duration-300 object-contain">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10 px-6 bg-[#050000]">
+        <div class="max-w-xl mx-auto rounded-2xl border border-gold/30 bg-forest-950/70 px-6 py-5 text-center">
+            <div class="flex items-center justify-center gap-3 mb-2 text-lightGold">
+                <i class="fa-solid fa-shield-halved text-xl"></i>
+                <h3 class="text-lg font-bold">Garantia de 7 dias</h3>
+            </div>
+            <p class="text-sm leading-relaxed text-gray-300">Você pode acessar o conteúdo e avaliar se ele faz sentido para a sua campanha. Se decidir que não é para você, solicite o reembolso dentro do prazo da garantia, conforme as condições da plataforma.</p>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 max-w-4xl mx-auto bg-transparent relative z-10">
+        <h2 class="text-3xl font-bold text-center mb-12 font-serif text-lightGold drop-shadow-[0_0_15px_rgba(255,209,91,0.6)]">Perguntas Frequentes</h2>
+        
+        <div class="space-y-4 text-left">
+            <details class="group border border-gold/40 bg-maroon-900/50 backdrop-blur-sm rounded-2xl cursor-pointer">
+                <summary class="flex justify-between items-center font-bold text-lg p-6 text-white">
+                    Serve para quem está começando na fotografia agora?
+                    <span class="transition group-open:rotate-180">
+                        <i class="fa-solid fa-chevron-down text-lightGold"></i>
+                    </span>
+                </summary>
+                <div class="text-gray-200 px-6 pb-6 leading-relaxed">
+                    Com certeza! Na verdade, começar do jeito certo, com a arquitetura de preços validada, vai evitar que você perca dinheiro montando pacotes que dão prejuízo logo no seu primeiro cenário de Natal.
+                </div>
+            </details>
+            
+            <details class="group border border-gold/40 bg-maroon-900/50 backdrop-blur-sm rounded-2xl cursor-pointer">
+                <summary class="flex justify-between items-center font-bold text-lg p-6 text-white">
+                    Por quanto tempo terei acesso ao treinamento?
+                    <span class="transition group-open:rotate-180">
+                        <i class="fa-solid fa-chevron-down text-lightGold"></i>
+                    </span>
+                </summary>
+                <div class="text-gray-200 px-6 pb-6 leading-relaxed">
+                    Você terá acesso ilimitado por 1 ano (12 meses). Tempo mais do que suficiente para aplicar nas campanhas de fim de ano, dia das mães e repassar o conteúdo com calma.
+                </div>
+            </details>
+
+            <details class="group border border-gold/40 bg-maroon-900/50 backdrop-blur-sm rounded-2xl cursor-pointer">
+                <summary class="flex justify-between items-center font-bold text-lg p-6 text-white">
+                    Como recebo o acesso?
+                    <span class="transition group-open:rotate-180">
+                        <i class="fa-solid fa-chevron-down text-lightGold"></i>
+                    </span>
+                </summary>
+                <div class="text-gray-200 px-6 pb-6 leading-relaxed">
+                    Imediatamente após a aprovação do seu pagamento (PIX e Cartão são aprovados na hora), você receberá um e-mail com seu login e senha para acessar a área de membros exclusiva e assistir de onde quiser.
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <footer class="border-t border-gold/20 py-10 text-center text-sm text-gray-400 bg-maroon-950">
+        <div class="flex justify-center mb-6">
+            <a href="https://www.instagram.com/luanaduartefotografia/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gold transition-colors text-5xl hover:drop-shadow-[0_0_15px_rgba(255,209,91,0.6)]" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+        <p class="mb-2">© 2026 Luana Duarte Fotografia | Todos os Direitos Reservados</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 30,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 40,
+                    },
+                },
+            });
+
+            let timeInSecs = localStorage.getItem('natalTimer') ? parseInt(localStorage.getItem('natalTimer')) : 10 * 60;
+            
+            function updateTimer() {
+                if (timeInSecs <= 0) {
+                    document.getElementById('countdown-timer').innerText = "00:00";
+                    return;
+                }
+                
+                timeInSecs--;
+                localStorage.setItem('natalTimer', timeInSecs);
+
+                const m = Math.floor(timeInSecs / 60);
+                const s = timeInSecs % 60;
+
+                document.getElementById('countdown-timer').innerText =
+                    String(m).padStart(2, '0') + ":" +
+                    String(s).padStart(2, '0');
+            }
+            setInterval(updateTimer, 1000);
+            updateTimer();
+
+        const roadPath = document.getElementById('road-main-path');
+        const carGroup = document.getElementById('car-group');
+        const dimOverlay = document.getElementById('dim-overlay');
+
+        if(roadPath && carGroup) {
+            const checkpoints = [
+                document.getElementById('step-node-1'),
+                document.getElementById('step-node-2'),
+                document.getElementById('step-node-3'),
+                document.getElementById('step-node-4')
+            ];
+
+            const stopTargets = [
+                { t: 0.08, node: checkpoints[0] },
+                { t: 0.43, node: checkpoints[1] },
+                { t: 0.70, node: checkpoints[2] },
+                { t: 0.94, node: checkpoints[3] }
+            ];
+
+            const totalPathLength = roadPath.getTotalLength();
+
+            function updateCarAtFraction(fraction) {
+                const currentDist = Math.max(0, Math.min(fraction * totalPathLength, totalPathLength));
+                const point = roadPath.getPointAtLength(currentDist);
+
+                const nextDist = Math.min(currentDist + 2.5, totalPathLength);
+                const prevDist = Math.max(currentDist - 2.5, 0);
+                const pNext = roadPath.getPointAtLength(nextDist);
+                const pPrev = roadPath.getPointAtLength(prevDist);
+
+                const angle = Math.atan2(pNext.y - pPrev.y, pNext.x - pPrev.x) * (180 / Math.PI);
+                carGroup.setAttribute('transform', `translate(${point.x}, ${point.y}) rotate(${angle})`);
+            }
+
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
+            function driveAlongPath(startFrac, endFrac, durationMs) {
+                return new Promise(resolve => {
+                    const startTime = performance.now();
+
+                    function step(now) {
+                        const elapsed = now - startTime;
+                        const progress = Math.min(elapsed / durationMs, 1);
+                        
+                        const ease = progress < 0.5 
+                            ? 2 * progress * progress 
+                            : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+                        const currentFrac = startFrac + (endFrac - startFrac) * ease;
+                        updateCarAtFraction(currentFrac);
+
+                        if (progress < 1) {
+                            requestAnimationFrame(step);
+                        } else {
+                            resolve();
+                        }
+                    }
+                    requestAnimationFrame(step);
+                });
+            }
+
+            async function runRoadSimulation() {
+                updateCarAtFraction(0);
+
+                while (true) {
+                    dimOverlay.style.opacity = '0';
+                    checkpoints.forEach(cp => {
+                        if(cp) cp.classList.remove('active', 'grand-finale');
+                    });
+                    updateCarAtFraction(0);
+
+                    await sleep(1400);
+
+                    let previousT = 0;
+
+                    for (let i = 0; i < stopTargets.length; i++) {
+                        const target = stopTargets[i];
+                        const driveDuration = 2300;
+                        await driveAlongPath(previousT, target.t, driveDuration);
+                        previousT = target.t;
+
+                        if(target.node) target.node.classList.add('active');
+
+                        if (i === stopTargets.length - 1) {
+                            if(target.node) target.node.classList.add('grand-finale');
+                            dimOverlay.style.opacity = '1';
+                            await sleep(4500); 
+                        } else {
+                            await sleep(2500);
+                        }
+                    }
+
+                    dimOverlay.style.opacity = '0';
+                    await sleep(1500);
+                }
+            }
+
+            runRoadSimulation();
+        }
+    });
+</script>
+</body>
+</html>
